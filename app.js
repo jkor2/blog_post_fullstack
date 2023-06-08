@@ -11,7 +11,7 @@ app.use("/", router)
 
 //mongoose connection 
 mongoose.set("strictQuery", false)
-const mongoDB = "mongodb+srv://jkorobellis:JakeKoro@blog-app.3rchsel.mongodb.net/?retryWrites=true&w=majority"
+const mongoDB = "mongodb+srv://jkorobellis:JakeKoro@blog-app.3rchsel.mongodb.net/blog-app?retryWrites=true&w=majority"
 
 main().catch((err) => console.log(err))
 async function main(){

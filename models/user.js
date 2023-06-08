@@ -7,7 +7,6 @@ const UserSchema = new Schema({
     lname: {type: String, required: true},
     email: {type: String, required: true}, 
     username: {type: String, required: true}, 
-    canPost: false
 })
 
 module.exports = mongoose.model("User", UserSchema)
