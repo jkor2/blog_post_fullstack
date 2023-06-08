@@ -1,10 +1,11 @@
 const express = require("express")
 const mongoose = require("mongoose")
 const app = express()
+const router = require("./controllers/index")
 
-app.get("/", (req,res) => {
-    res.send("Connected")
-})
+
+
+app.use("/", router)
 
 
 
