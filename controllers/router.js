@@ -13,7 +13,9 @@ router.get('/api/user/:id', controller.userInfo)
 router.get("/api/posts/:id", controller.individualPost)
 //POST Request 
 router.post("/api/create/post", controller.createPost)
-//User long
+//User login 
 router.post("/user/login", controller.userLogin)
+//User sign up 
+router.post("/user/create", controller.userCreate)
 
 module.exports = router

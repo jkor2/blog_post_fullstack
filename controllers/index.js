@@ -36,3 +36,6 @@ exports.createPost = asynchandler(async(req,res) => {
 exports.userLogin = asynchandler(async(req,res) => {
     res.send("User logged in")
 })
+exports.userCreate = asynchandler(async(req,res) => {
+    res.send("User created")
+})
