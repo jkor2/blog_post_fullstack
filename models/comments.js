@@ -6,7 +6,8 @@ const { ObjectId } = require("mongodb")
 const CommentSchema = new Schema({
     message: {type: String, required: true},
     user: {type: ObjectId, required: true},
-    date: {type: Date, default: Date.now}
+    date: {type: Date, default: Date.now},
+    likes: {type: Number, default: 0}
 })
 
 module.exports = mongoose.model("Comment", CommentSchema)
