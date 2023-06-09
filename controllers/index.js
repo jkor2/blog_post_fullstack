@@ -13,7 +13,7 @@ exports.postsGet = asynchandler(async(req,res) => {
         posts: 'All posts...'
     })
 })
-//Individual User data **Admin only**
+//Individual User data
 exports.userInfo = asynchandler(async(req,res) => {
     res.json({
         info: "User info..."
