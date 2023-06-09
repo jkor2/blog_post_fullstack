@@ -7,11 +7,15 @@ const asynchandler = require("express-async-handler")
 exports.userGet = asynchandler(async(req,res) => {
     res.send("Please enter the correct route")
 })
-//Get all messages
-router.get("/messages", (req,res) => {
+//Get ALL posts 
+exports.postsGet = asynchandler(async(req,res) => {
     res.json({
-        Message: "Messages..."
+        posts: 'All posts...'
     })
 })
-
-
+//Individual User data **Admin only**
+exports.userInfo = asynchandler(async(req,res) => {
+    res.json({
+        info: "User info..."
+    })
+})
