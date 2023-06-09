@@ -2,11 +2,16 @@ const express = require("express")
 const router = express.Router()
 const User = require("../models/user")
 const Message = require("../models/message")
-//new user get
-router.get("/", (req,res) => {
-
-res.send("new user route")
-
+const asynchandler = require("express-async-handler")
+//Select route homepage
+exports.userGet = asynchandler(async(req,res) => {
+    res.send("Please enter the correct route")
+})
+//Get all messages
+router.get("/messages", (req,res) => {
+    res.json({
+        Message: "Messages..."
+    })
 })
 
-module.exports = router
+

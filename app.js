@@ -1,7 +1,7 @@
 const express = require("express")
 const mongoose = require("mongoose")
 const app = express()
-const router = require("./controllers/index")
+const router = require('./controllers/router')
 
 
 
