@@ -6,12 +6,12 @@ const controller = require("./index")
 //Displays nothin 
 router.get("/", controller.userGet)
 //Returns all posts in JSON
-router.get('/allposts', controller.postsGet)
+router.get('/api/allposts', controller.postsGet)
 //Returns individual info on someone in JSON 
-router.get('/user/:id', controller.userInfo)
+router.get('/api/user/:id', controller.userInfo)
 //Returns individual post
-router.get("/posts/:id", controller.individualPost)
+router.get("/api/posts/:id", controller.individualPost)
 //POST Request 
-router.post("/create/post", controller.createPost)
+router.post("/api/create/post", controller.createPost)
 
 module.exports = router
