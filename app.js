@@ -4,10 +4,7 @@ const app = express()
 const router = require('./controllers/router')
 require("dotenv").config()
 
-
 app.use("/", router)
-
-
 
 //mongoose connection 
 mongoose.set("strictQuery", false)
