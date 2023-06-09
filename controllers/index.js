@@ -27,3 +27,7 @@ exports.individualPost = asynchandler(async(req,res) => {
         user: "User...", 
     })
 })
+//Create post 
+exports.createPost = asynchandler(async(req,res) => {
+    res.send("will create a post if user has privlidges")
+})
