@@ -19,3 +19,11 @@ exports.userInfo = asynchandler(async(req,res) => {
         info: "User info..."
     })
 })
+//All comments for a post
+exports.individualPost = asynchandler(async(req,res) => {
+    res.json({
+        post: "This will be the post",
+        comments: "Blah Blah Blah",
+        user: "User...", 
+    })
+})

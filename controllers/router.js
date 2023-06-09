@@ -8,6 +8,6 @@ router.get("/", controller.userGet)
 router.get('/allposts', controller.postsGet)
 //Returns individual info on someone in JSON 
 router.get('/user/:id', controller.userInfo)
-//Returns all comments
-
+//Returns individual post
+router.get("/posts/:id", controller.individualPost)
 module.exports = router
