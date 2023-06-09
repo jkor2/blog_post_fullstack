@@ -13,5 +13,7 @@ router.get('/api/user/:id', controller.userInfo)
 router.get("/api/posts/:id", controller.individualPost)
 //POST Request 
 router.post("/api/create/post", controller.createPost)
+//User long
+router.post("/user/login", controller.userLogin)
 
 module.exports = router

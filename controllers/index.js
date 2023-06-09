@@ -3,6 +3,7 @@ const router = express.Router()
 const User = require("../models/user")
 const Message = require("../models/message")
 const asynchandler = require("express-async-handler")
+const expressAsyncHandler = require("express-async-handler")
 //Select route homepage
 exports.userGet = asynchandler(async(req,res) => {
     res.send("Please enter the correct route")
@@ -30,4 +31,8 @@ exports.individualPost = asynchandler(async(req,res) => {
 //Create post 
 exports.createPost = asynchandler(async(req,res) => {
     res.send("will create a post if user has privlidges")
+})
+//User login - will pass token in this request
+exports.userLogin = asynchandler(async(req,res) => {
+    res.send("User logged in")
 })
