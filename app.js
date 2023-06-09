@@ -2,7 +2,7 @@ const express = require("express")
 const mongoose = require("mongoose")
 const app = express()
 const router = require('./controllers/router')
-
+require("dotenv").config()
 
 
 app.use("/", router)
@@ -11,7 +11,7 @@ app.use("/", router)
 
 //mongoose connection 
 mongoose.set("strictQuery", false)
-const mongoDB = "mongodb+srv://jkorobellis:JakeKoro@blog-app.3rchsel.mongodb.net/blog-app?retryWrites=true&w=majority"
+const mongoDB = process.env.DB_LINK
 
 main().catch((err) => console.log(err))
 async function main(){
