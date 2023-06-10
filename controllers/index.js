@@ -39,3 +39,7 @@ exports.userLogin = asynchandler(async(req,res) => {
 exports.userCreate = asynchandler(async(req,res) => {
     res.send("User created")
 })
+//Report feature 
+exports.reportPost = asynchandler(async(req,res) => {
+    res.send("Report has been submitted")
+})
