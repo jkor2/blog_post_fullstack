@@ -21,6 +21,7 @@ router.post("/user/create", controller.userCreate)
 router.post("/api/posts/:id/report", controller.reportPost)
 //Submit comment 
 router.post("/submit/comment", controller.submitComment)
-
+//Admin remove comment
+router.post("/admin/remove/comment", controller.adminRemoveComment)
 
 module.exports = router
