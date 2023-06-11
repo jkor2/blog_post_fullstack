@@ -12,12 +12,15 @@ router.get('/api/user/:id', controller.userInfo)
 //Returns individual post
 router.get("/api/posts/:id", controller.individualPost)
 //Create post POST Request 
-router.post("/api/create/post", controller.createPost)
+router.post("/create/post", controller.createPost)
 //User login 
 router.post("/user/login", controller.userLogin)
 //User sign up 
 router.post("/user/create", controller.userCreate)
 //Blog report feature 
 router.post("/api/posts/:id/report", controller.reportPost)
+//Submit comment 
+router.post("/submit/comment", controller.submitComment)
+
 
 module.exports = router

@@ -43,3 +43,7 @@ exports.userCreate = asynchandler(async(req,res) => {
 exports.reportPost = asynchandler(async(req,res) => {
     res.send("Report has been submitted")
 })
+//Submit a comment
+exports.submitComment = asynchandler(async(req,res) => {
+    res.send("Comment has been submitted!")
+})
