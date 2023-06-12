@@ -23,5 +23,7 @@ router.post("/api/posts/:id/report", controller.reportPost)
 router.post("/submit/comment", controller.submitComment)
 //Admin remove comment
 router.post("/admin/remove/comment", controller.adminRemoveComment)
+//Edit a post **User should only be able to edit their own posts 
+router.post("/api/posts/:id/edit", controller.userPostEdit)
 
 module.exports = router

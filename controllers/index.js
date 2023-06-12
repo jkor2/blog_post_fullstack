@@ -51,3 +51,6 @@ exports.submitComment = asynchandler(async(req,res) => {
 exports.adminRemoveComment = asynchandler(async(req,res) => {
     res.send("Comment removed")
 })
+exports.userPostEdit = asynchandler(async(req,res) => {
+    res.send("The post has been edited!")
+})
