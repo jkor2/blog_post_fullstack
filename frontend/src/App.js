@@ -8,7 +8,7 @@ function App() {
 
 
   React.useEffect(() => {
-    fetch('/api').then((res) => res.json()).then((data) => console.log(data))
+    fetch('/api/allposts').then((res) => res.json()).then((data) => console.log(data))
   })
 
 
