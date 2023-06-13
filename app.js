@@ -6,6 +6,11 @@ require("dotenv").config()
 
 app.use("/", router)
 
+app.get("/api", (req,res) => {
+    res.json({test: true})
+})
+
+
 //mongoose connection 
 mongoose.set("strictQuery", false)
 const mongoDB = process.env.DB_LINK
