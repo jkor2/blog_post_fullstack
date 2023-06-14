@@ -18,6 +18,17 @@ export default function Signup() {
   const handleSubmit = (event) => {
     event.preventDefault();
 
+    //Sending form data to backend
+    fetch("/user/create", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(formData),
+    })
+      .then((res) => res.json())
+      .then((data) => console.log(data));
+
     console.log(formData);
   };
   return (
