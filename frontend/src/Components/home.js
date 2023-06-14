@@ -14,8 +14,8 @@ export default function Home() {
                     A personal blog project creaetd using Node.js, Express, and React!
                 </div>
                 <div className='login-singup'>
-                    <a href='www.google.com' className='button'>Login</a>
-                    <a href='www.google.com' className='button'>Sign Up</a>
+                    <a href='login' className='button'>Login</a>
+                    <a href='signup' className='button'>Sign Up</a>
                 </div>
             </div>
         </div>
