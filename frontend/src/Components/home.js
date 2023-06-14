@@ -11,7 +11,11 @@ export default function Home() {
                     Welcome to The J Word
                 </div>
                 <div className='ten'>
-                    A personal blog projecte creaetd using Node.js, Express, and React!
+                    A personal blog project creaetd using Node.js, Express, and React!
+                </div>
+                <div className='login-singup'>
+                    <a href='www.google.com' className='button'>Login</a>
+                    <a href='www.google.com' className='button'>Sign Up</a>
                 </div>
             </div>
         </div>
