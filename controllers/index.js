@@ -40,7 +40,23 @@ exports.userLogin = asynchandler(async (req, res) => {
 //Sign up handler
 exports.userCreate = asynchandler(async (req, res) => {
   console.log(req.body);
-  res.json({ stat: "User created" });
+  //need to add in a validation method that checks if the email is
+  //in use already.
+  try {
+    const newUser = new User({
+      fname: req.body.firstName,
+      lname: req.body.lastName,
+      email: req.body.email,
+      password: req.body.password,
+      canPost: false,
+    });
+
+    const save = newUser.save();
+
+    res.json({ stat: "User created" });
+  } catch (err) {
+    console.log(err);
+  }
 });
 //Report feature
 exports.reportPost = asynchandler(async (req, res) => {
