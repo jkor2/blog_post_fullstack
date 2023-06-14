@@ -1,12 +1,12 @@
-const { ObjectId } = require("mongodb")
-const mongoose = require("mongoose")
-const Schema = mongoose.Schema
+const { ObjectId } = require("mongodb");
+const mongoose = require("mongoose");
+const Schema = mongoose.Schema;
 
-//Message Model 
+//Message Model
 const MessageSchema = new Schema({
-    message: {type: String, required: true},
-    uaer: {type: ObjectId, required: true},
-    date: {type: Date, default: Date.now}
-})
+  message: { type: String, required: true },
+  uaer: { type: ObjectId, required: true },
+  date: { type: Date, default: Date.now },
+});
 
-module.exports = mongoose.model("Message", MessageSchema)
+module.exports = mongoose.model("Message", MessageSchema);
