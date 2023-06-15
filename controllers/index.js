@@ -4,11 +4,7 @@ const User = require("../models/user");
 const Message = require("../models/message");
 const asynchandler = require("express-async-handler");
 const expressAsyncHandler = require("express-async-handler");
-//Select route homepage
 
-exports.userGet = asynchandler(async (req, res) => {
-  res.send("Please enter the correct route");
-});
 //Get ALL posts
 exports.postsGet = asynchandler(async (req, res) => {
   res.json({
@@ -40,10 +36,7 @@ exports.userLogin = asynchandler(async (req, res) => {
 //Sign up handler
 exports.userCreate = asynchandler(async (req, res) => {
   console.log(req.body);
-  //Tzried to pass ina  jwt Token hoever ran into errors with the secrete key, 
-  
-
-  
+  //Tzried to pass ina  jwt Token hoever ran into errors with the secrete key,   
   try {
     const newUser = new User({
       fname: req.body.firstName,
@@ -60,10 +53,7 @@ exports.userCreate = asynchandler(async (req, res) => {
     console.log(err);
   }
 });
-//Report feature
-exports.reportPost = asynchandler(async (req, res) => {
-  res.send("Report has been submitted");
-});
+
 //Submit a comment
 exports.submitComment = asynchandler(async (req, res) => {
   res.send("Comment has been submitted!");
@@ -72,6 +62,7 @@ exports.submitComment = asynchandler(async (req, res) => {
 exports.adminRemoveComment = asynchandler(async (req, res) => {
   res.send("Comment removed");
 });
+//Edit a post
 exports.userPostEdit = asynchandler(async (req, res) => {
   res.send("The post has been edited!");
 });
