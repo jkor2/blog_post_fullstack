@@ -14,10 +14,8 @@ export default function Signup() {
       [name]: value,
     }));
   };
-
   const handleSubmit = (event) => {
     event.preventDefault();
-
     //Sending form data to backend
     fetch("/user/create", {
       method: "POST",
