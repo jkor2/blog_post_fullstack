@@ -40,8 +40,10 @@ exports.userLogin = asynchandler(async (req, res) => {
 //Sign up handler
 exports.userCreate = asynchandler(async (req, res) => {
   console.log(req.body);
-  //need to add in a validation method that checks if the email is
-  //in use already.
+  //Tzried to pass ina  jwt Token hoever ran into errors with the secrete key, 
+  
+
+  
   try {
     const newUser = new User({
       fname: req.body.firstName,
