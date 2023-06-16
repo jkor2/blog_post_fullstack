@@ -14,6 +14,7 @@ app.get("/api", (req, res) => {
 
 //mongoose connection
 mongoose.set("strictQuery", false);
+//Re-established dotenv connection 
 const mongoDB = process.env.DB_LINK;
 
 main().catch((err) => console.log(err));
