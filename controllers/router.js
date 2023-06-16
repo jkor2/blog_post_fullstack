@@ -17,8 +17,6 @@ router.post("/create/post", controller.createPost)
 router.post("/user/login", controller.userLogin)
 //User sign up 
 router.post("/user/create", controller.userCreate)
-//Blog report feature 
-router.post("/api/posts/:id/report", controller.reportPost)
 //Submit comment 
 router.post("/submit/comment", controller.submitComment)
 //Admin remove comment

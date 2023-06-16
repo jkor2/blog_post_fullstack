@@ -5,6 +5,12 @@ const Message = require("../models/message");
 const asynchandler = require("express-async-handler");
 const expressAsyncHandler = require("express-async-handler");
 
+
+//test
+exports.userGet = asynchandler(async(req,res) => {
+  res.send("Connected!")
+})
+
 //Get ALL posts
 exports.postsGet = asynchandler(async (req, res) => {
   res.json({
