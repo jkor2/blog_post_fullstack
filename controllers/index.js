@@ -42,7 +42,7 @@ exports.userLogin = asynchandler(async (req, res) => {
 //Sign up handler
 exports.userCreate = asynchandler(async (req, res) => {
   console.log(req.body);
-  //Tzried to pass ina  jwt Token hoever ran into errors with the secrete key,   
+  //Tzried to pass into jwt Token hoever ran into errors with the secrete key,   
   try {
     const newUser = new User({
       fname: req.body.firstName,
