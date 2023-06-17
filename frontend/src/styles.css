@@ -4,6 +4,8 @@
   box-sizing: border-box;
   width: 100vw;
   height: 100vh;
+  background: #66545E;
+  color: #F6E0B5
 }
 .container {
   height: 100vh;
