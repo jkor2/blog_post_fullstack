@@ -11,19 +11,19 @@ exports.userGet = asynchandler(async(req,res) => {
   res.send("Connected!")
 })
 
-//Get ALL posts
+//Get ALL posts - render all posts when a user is logged in 
 exports.postsGet = asynchandler(async (req, res) => {
   res.json({
     posts: "All posts...",
   });
 });
-//Individual User data
+//Individual User data - this will be used to edit users profiles
 exports.userInfo = asynchandler(async (req, res) => {
   res.json({
     info: "User info...",
   });
 });
-//All comments for a post
+//All comments for a post - this will be moved wo when an individual post is selected 
 exports.individualPost = asynchandler(async (req, res) => {
   res.json({
     post: "This will be the post",
@@ -31,7 +31,7 @@ exports.individualPost = asynchandler(async (req, res) => {
     user: "User...",
   });
 });
-//Create post
+//Create post -- this will add a post to the database 
 exports.createPost = asynchandler(async (req, res) => {
   res.send("will create a post if user has privlidges");
 });
@@ -39,7 +39,7 @@ exports.createPost = asynchandler(async (req, res) => {
 exports.userLogin = asynchandler(async (req, res) => {
   res.send("User logged in");
 });
-//Sign up handler
+//Sign up handler -- new users getting added to the DB
 exports.userCreate = asynchandler(async (req, res) => {
   console.log(req.body);
   //Tzried to pass into jwt Token hoever ran into errors with the secrete key,   
@@ -60,15 +60,15 @@ exports.userCreate = asynchandler(async (req, res) => {
   }
 });
 
-//Submit a comment
+//Submit a comment - post a comment, will just rerender the current page a user is on
 exports.submitComment = asynchandler(async (req, res) => {
   res.send("Comment has been submitted!");
 });
-//Admin remove comment
+//Admin remove comment -- Those who have admin access will be able to remove comments  
 exports.adminRemoveComment = asynchandler(async (req, res) => {
   res.send("Comment removed");
 });
-//Edit a post
+//Edit a post -- will be able to edit posts that are currently posted 
 exports.userPostEdit = asynchandler(async (req, res) => {
   res.send("The post has been edited!");
 });
