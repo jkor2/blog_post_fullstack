@@ -37,7 +37,8 @@ exports.createPost = asynchandler(async (req, res) => {
 });
 //User login - will pass token in this request
 exports.userLogin = asynchandler(async (req, res) => {
-  res.send("User logged in");
+  console.log(req.body);
+  res.send({data: true})
 });
 //Sign up handler -- new users getting added to the DB
 exports.userCreate = asynchandler(async (req, res) => {

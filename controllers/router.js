@@ -14,7 +14,7 @@ router.get("/api/posts/:id", controller.individualPost)
 //Create post POST Request 
 router.post("/create/post", controller.createPost)
 //User login 
-router.get("/user/login", controller.userLogin)
+router.post("/user/login", controller.userLogin)
 //User sign up 
 router.post("/user/create", controller.userCreate)
 //Submit comment 

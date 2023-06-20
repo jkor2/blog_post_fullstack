@@ -1,6 +1,9 @@
 import React from "react";
+import { useNavigate } from 'react-router-dom';
 
 export default function Login() {
+  const navigate = useNavigate()
+
   const [formData, setFormData] = React.useState({
     email: "",
     password: ""
@@ -12,19 +15,27 @@ const handleChange = (event)=> {
     ...prevData,
     [name]: value,
   }));}
-  
+
 const handleSubmit = (e) => {
 e.preventDefault()
   fetch("/user/login", {
-  method: "GET",
+  method: "POST",
   headers: {
     "Content-Type": "application/json"
   },
-}).then((res) => res.json()).then((data) => console.log(data));
+  body: JSON.stringify(formData),
+
+}).then((res) => res.json()).then((data) => {
+  if (data.data) {
+    navigate('/')
+  }else {
+    console.log("Error, not found.")
+}});
 
 console.log(formData);
-
 }
+
+
 
   return (
     <div className="form-hold">
