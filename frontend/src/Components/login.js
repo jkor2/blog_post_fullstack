@@ -6,12 +6,24 @@ export default function Login() {
     password: ""
   })
 
-const handleChange = ()=> {
-  console.log("changed")
-}
+const handleChange = (event)=> {
+  const { name, value } = event.target;
+  setFormData((prevData) => ({
+    ...prevData,
+    [name]: value,
+  }));}
+  
+const handleSubmit = (e) => {
+e.preventDefault()
+  fetch("/user/login", {
+  method: "GET",
+  headers: {
+    "Content-Type": "application/json"
+  },
+}).then((res) => res.json()).then((data) => console.log(data));
 
-const handleSubmit = () => {
-  console.log("Submitted!")
+console.log(formData);
+
 }
 
   return (
