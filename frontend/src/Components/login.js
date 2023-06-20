@@ -1,41 +1,42 @@
 import React from "react";
-import { useNavigate } from 'react-router-dom';
+import { useNavigate } from "react-router-dom";
 
 export default function Login() {
-  const navigate = useNavigate()
+  const navigate = useNavigate();
 
   const [formData, setFormData] = React.useState({
     email: "",
-    password: ""
-  })
+    password: "",
+  });
 
-const handleChange = (event)=> {
-  const { name, value } = event.target;
-  setFormData((prevData) => ({
-    ...prevData,
-    [name]: value,
-  }));}
+  const handleChange = (event) => {
+    const { name, value } = event.target;
+    setFormData((prevData) => ({
+      ...prevData,
+      [name]: value,
+    }));
+  };
 
-const handleSubmit = (e) => {
-e.preventDefault()
-  fetch("/user/login", {
-  method: "POST",
-  headers: {
-    "Content-Type": "application/json"
-  },
-  body: JSON.stringify(formData),
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    fetch("/user/login", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(formData),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        if (data.data) {
+          navigate("/");
+        } else {
+          console.log("Error, not found.");
+        }
+      });
 
-}).then((res) => res.json()).then((data) => {
-  if (data.data) {
-    navigate('/')
-  }else {
-    console.log("Error, not found.")
-}});
-
-console.log(formData);
-}
-
-
+    console.log(formData);
+  };
 
   return (
     <div className="form-hold">

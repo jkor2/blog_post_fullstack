@@ -5,13 +5,12 @@ const Message = require("../models/message");
 const asynchandler = require("express-async-handler");
 const expressAsyncHandler = require("express-async-handler");
 
-
 //test
-exports.userGet = asynchandler(async(req,res) => {
-  res.send("Connected!")
-})
+exports.userGet = asynchandler(async (req, res) => {
+  res.send("Connected!");
+});
 
-//Get ALL posts - render all posts when a user is logged in 
+//Get ALL posts - render all posts when a user is logged in
 exports.postsGet = asynchandler(async (req, res) => {
   res.json({
     posts: "All posts...",
@@ -23,7 +22,7 @@ exports.userInfo = asynchandler(async (req, res) => {
     info: "User info...",
   });
 });
-//All comments for a post - this will be moved wo when an individual post is selected 
+//All comments for a post - this will be moved wo when an individual post is selected
 exports.individualPost = asynchandler(async (req, res) => {
   res.json({
     post: "This will be the post",
@@ -31,19 +30,19 @@ exports.individualPost = asynchandler(async (req, res) => {
     user: "User...",
   });
 });
-//Create post -- this will add a post to the database 
+//Create post -- this will add a post to the database
 exports.createPost = asynchandler(async (req, res) => {
   res.send("will create a post if user has privlidges");
 });
 //User login - will pass token in this request
 exports.userLogin = asynchandler(async (req, res) => {
   console.log(req.body);
-  res.send({data: true})
+  res.send({ data: true });
 });
 //Sign up handler -- new users getting added to the DB
 exports.userCreate = asynchandler(async (req, res) => {
   console.log(req.body);
-  //Tzried to pass into jwt Token hoever ran into errors with the secrete key,   
+  //Tzried to pass into jwt Token hoever ran into errors with the secrete key,
   try {
     const newUser = new User({
       fname: req.body.firstName,
@@ -65,11 +64,11 @@ exports.userCreate = asynchandler(async (req, res) => {
 exports.submitComment = asynchandler(async (req, res) => {
   res.send("Comment has been submitted!");
 });
-//Admin remove comment -- Those who have admin access will be able to remove comments  
+//Admin remove comment -- Those who have admin access will be able to remove comments
 exports.adminRemoveComment = asynchandler(async (req, res) => {
   res.send("Comment removed");
 });
-//Edit a post -- will be able to edit posts that are currently posted 
+//Edit a post -- will be able to edit posts that are currently posted
 exports.userPostEdit = asynchandler(async (req, res) => {
   res.send("The post has been edited!");
 });
