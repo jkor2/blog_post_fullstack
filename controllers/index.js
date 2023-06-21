@@ -3,9 +3,9 @@ const router = express.Router();
 const User = require("../models/user");
 const Message = require("../models/message");
 const asynchandler = require("express-async-handler");
-const LocalStraregy = require("passport-local").Strategy;
 const bcrypt = require("bcryptjs");
-const passport = require("passport");
+const jwt = require("jsonwebtoken");
+require("dotenv").config();
 
 //test
 exports.userGet = asynchandler(async (req, res) => {
@@ -41,16 +41,20 @@ exports.userLogin = asynchandler(async (req, res) => {
   const liveAccount = await User.findOne({ email: req.body.email });
   console.log(liveAccount);
   if (liveAccount == null) {
-    console.log("2");
     res.send({ data: false });
   }
-
   //make sure password matches
   else {
     console.log(liveAccount.password);
     bcrypt.compare(req.body.password, liveAccount.password, (err, result) => {
       if (result) {
         //pass jswt here
+        jwt.sign({ user: liveAccount }, process.env.JWTKEY, (err, token) => {
+          console.log(token);
+          res.json({
+            token: token,
+          });
+        });
         console.log("Login");
         return res.send({ data: true });
       } else {
@@ -65,7 +69,6 @@ exports.userCreate = asynchandler(async (req, res) => {
   console.log(req.body);
   const salt = await bcrypt.genSalt(10);
   const hashedPassword = await bcrypt.hash(req.body.password, salt);
-
   try {
     const newUser = new User({
       fname: req.body.firstName,
@@ -76,7 +79,6 @@ exports.userCreate = asynchandler(async (req, res) => {
     });
 
     const save = newUser.save();
-
     res.json({ stat: "User created" });
   } catch (err) {
     console.log(err);
