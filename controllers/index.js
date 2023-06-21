@@ -36,8 +36,15 @@ exports.createPost = asynchandler(async (req, res) => {
 });
 //User login - will pass token in this request
 exports.userLogin = asynchandler(async (req, res) => {
-  console.log(req.body);
-  res.send({ data: true });
+  const liveAccount = await User.find({ email: req.body.email });
+  console.log(liveAccount);
+  if (!liveAccount.length) {
+    res.send({ data: false });
+  }
+  //make sure password matches
+  else {
+    res.send({ data: true });
+  }
 });
 //Sign up handler -- new users getting added to the DB
 exports.userCreate = asynchandler(async (req, res) => {
