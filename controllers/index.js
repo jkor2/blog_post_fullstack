@@ -63,7 +63,7 @@ exports.userLogin = asynchandler(async (req, res) => {
 //Sign up handler -- new users getting added to the DB
 exports.userCreate = asynchandler(async (req, res) => {
   console.log(req.body);
-  //Tzried to pass into jwt Token hoever ran into errors with the secrete key,
+  //Pass JWT token here
   const salt = await bcrypt.genSalt(10);
   const hashedPassword = await bcrypt.hash(req.body.password, salt);
 
