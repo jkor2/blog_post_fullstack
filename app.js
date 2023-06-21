@@ -5,7 +5,6 @@ const router = require("./controllers/router");
 require("dotenv").config();
 
 app.use(express.json());
-
 app.use("/", router);
 
 app.get("/api", (req, res) => {
