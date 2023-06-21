@@ -28,7 +28,7 @@ export default function Login() {
     })
       .then((res) => res.json())
       .then((data) => {
-        if (data.data == true) {
+        if (data.data === true) {
           navigate("/");
         } else {
           console.log("Error, not found.");

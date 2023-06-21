@@ -5,6 +5,7 @@ const Message = require("../models/message");
 const asynchandler = require("express-async-handler");
 const LocalStraregy = require("passport-local").Strategy;
 const bcrypt = require("bcryptjs");
+const passport = require("passport");
 
 //test
 exports.userGet = asynchandler(async (req, res) => {
@@ -37,14 +38,26 @@ exports.createPost = asynchandler(async (req, res) => {
 });
 //User login - will pass token in this request
 exports.userLogin = asynchandler(async (req, res) => {
-  const liveAccount = await User.find({ email: req.body.email });
+  const liveAccount = await User.findOne({ email: req.body.email });
   console.log(liveAccount);
-  if (!liveAccount.length) {
+  if (liveAccount == null) {
+    console.log("2");
     res.send({ data: false });
   }
+
   //make sure password matches
   else {
-    res.send({ data: true });
+    console.log(liveAccount.password);
+    bcrypt.compare(req.body.password, liveAccount.password, (err, result) => {
+      if (result) {
+        //correct password, need to send in user data (ID) along with a jwt token
+        console.log("Login");
+        return res.send({ data: true });
+      } else {
+        console.log("not a match");
+        return res.send({ data: false });
+      }
+    });
   }
 });
 //Sign up handler -- new users getting added to the DB
