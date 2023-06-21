@@ -3,7 +3,8 @@ const router = express.Router();
 const User = require("../models/user");
 const Message = require("../models/message");
 const asynchandler = require("express-async-handler");
-const expressAsyncHandler = require("express-async-handler");
+const LocalStraregy = require("passport-local").Strategy;
+const bcrypt = require("bcryptjs");
 
 //test
 exports.userGet = asynchandler(async (req, res) => {
@@ -50,12 +51,15 @@ exports.userLogin = asynchandler(async (req, res) => {
 exports.userCreate = asynchandler(async (req, res) => {
   console.log(req.body);
   //Tzried to pass into jwt Token hoever ran into errors with the secrete key,
+  const salt = await bcrypt.genSalt(10);
+  const hashedPassword = await bcrypt.hash(req.body.password, salt);
+
   try {
     const newUser = new User({
       fname: req.body.firstName,
       lname: req.body.lastName,
       email: req.body.email,
-      password: req.body.password,
+      password: hashedPassword,
       canPost: false,
     });
 
