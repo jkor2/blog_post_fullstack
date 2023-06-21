@@ -50,7 +50,7 @@ exports.userLogin = asynchandler(async (req, res) => {
     console.log(liveAccount.password);
     bcrypt.compare(req.body.password, liveAccount.password, (err, result) => {
       if (result) {
-        //correct password, need to send in user data (ID) along with a jwt token
+        //pass jswt here
         console.log("Login");
         return res.send({ data: true });
       } else {
@@ -63,7 +63,6 @@ exports.userLogin = asynchandler(async (req, res) => {
 //Sign up handler -- new users getting added to the DB
 exports.userCreate = asynchandler(async (req, res) => {
   console.log(req.body);
-  //Pass JWT token here
   const salt = await bcrypt.genSalt(10);
   const hashedPassword = await bcrypt.hash(req.body.password, salt);
 
