@@ -1,7 +1,7 @@
 import React from "react";
 
 export default function Posts() {
-  const [data, setData] = React.useState();
+  const [data, setData] = React.useState([]);
   const token = localStorage.getItem("token");
 
   React.useEffect(() => {
@@ -13,21 +13,29 @@ export default function Posts() {
       },
     })
       .then((res) => res.json())
-      .then((data) => console.log(data));
+      .then((data) => setData(data));
   }, []);
+
+  console.log(data);
 
   return (
     <div className="container">
-      <div className="header">TEST</div>
-      <div className="body">
-        <div className="ten">TEST</div>
-        <div className="ten">TEST</div>
-        <div className="login-singup">
-          <a href="home" className="button">
-            Go Home
-          </a>
+      {data.status != 200 || data.status === [] ? (
+        <div>Error</div>
+      ) : (
+        <div>
+          <div className="header">TEST</div>
+          <div className="body">
+            <div className="ten">TEST</div>
+            <div className="ten">TEST</div>
+            <div className="login-singup">
+              <a href="home" className="button">
+                Go Home
+              </a>
+            </div>
+          </div>
         </div>
-      </div>
+      )}
     </div>
   );
 }

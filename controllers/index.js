@@ -18,9 +18,10 @@ exports.userGet = asynchandler(async (req, res) => {
 exports.postsGet = (req, res) => {
   jwt.verify(req.token, process.env.JWTKEY, (err, authData) => {
     if (err) {
-      res.sendStatus(403);
+      res.json({ status: 403 });
     } else {
       res.json({
+        status: 200,
         authData: authData,
       });
     }
