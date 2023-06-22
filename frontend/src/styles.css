@@ -88,3 +88,13 @@ input {
   border-radius: 10px;
   border: none;
 }
+
+.dna-wrapper{
+  height: 30vh;
+  width: 50vw;  
+}
+.load-hold{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
