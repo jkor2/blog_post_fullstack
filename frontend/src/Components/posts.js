@@ -3,7 +3,18 @@ import React from "react";
 export default function Posts() {
   const [data, setData] = React.useState();
   const token = localStorage.getItem("token");
-  console.log(token);
+
+  React.useEffect(() => {
+    fetch("/api/allposts", {
+      method: "GET",
+      headers: {
+        Authorization: `Bearer ${token}`,
+        "Content-Type": "application/json",
+      },
+    })
+      .then((res) => res.json())
+      .then((data) => console.log(data));
+  }, []);
 
   return (
     <div className="container">
