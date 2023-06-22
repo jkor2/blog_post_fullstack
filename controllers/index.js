@@ -5,6 +5,8 @@ const Message = require("../models/message");
 const asynchandler = require("express-async-handler");
 const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
+const tokenVerify = require("../middlewear/jwtVerify");
+const user = require("../models/user");
 require("dotenv").config();
 
 //test
@@ -13,11 +15,17 @@ exports.userGet = asynchandler(async (req, res) => {
 });
 
 //Get ALL posts - render all posts when a user is logged in
-exports.postsGet = asynchandler(async (req, res) => {
-  res.json({
-    posts: "All posts...",
+exports.postsGet = (req, res) => {
+  jwt.verify(req.token, process.env.JWTKEY, (err, authData) => {
+    if (err) {
+      res.sendStatus(403);
+    } else {
+      res.json({
+        authData: authData,
+      });
+    }
   });
-});
+};
 //Individual User data - this will be used to edit users profiles
 exports.userInfo = asynchandler(async (req, res) => {
   res.json({
@@ -39,24 +47,26 @@ exports.createPost = asynchandler(async (req, res) => {
 //User login - will pass token in this request
 exports.userLogin = asynchandler(async (req, res) => {
   const liveAccount = await User.findOne({ email: req.body.email });
-  console.log(liveAccount);
   if (liveAccount == null) {
     res.send({ data: false });
   }
   //make sure password matches
   else {
-    console.log(liveAccount.password);
+    console.log(liveAccount);
     bcrypt.compare(req.body.password, liveAccount.password, (err, result) => {
       if (result) {
         //pass jswt here
         jwt.sign({ user: liveAccount }, process.env.JWTKEY, (err, token) => {
-          console.log(token);
-          res.json({
-            token: token,
-          });
+          if (err) {
+            console.log(err);
+            return res.status(500).send({ data: false });
+          } else {
+            res.json({
+              token: token,
+              data: true,
+            });
+          }
         });
-        console.log("Login");
-        return res.send({ data: true });
       } else {
         console.log("not a match");
         return res.send({ data: false });

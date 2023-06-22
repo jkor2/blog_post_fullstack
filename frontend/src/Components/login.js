@@ -29,7 +29,8 @@ export default function Login() {
       .then((res) => res.json())
       .then((data) => {
         if (data.data === true) {
-          navigate("/");
+          localStorage.setItem("token", data.token);
+          navigate("/posts");
         } else {
           console.log("Error, not found.");
         }
