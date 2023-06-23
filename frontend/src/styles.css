@@ -2,10 +2,6 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
-  width: 100vw;
-  height: 100vh;
-  background: #66545E;
-  color: #F6E0B5
 }
 .container {
   height: 100vh;
@@ -97,4 +93,34 @@ input {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+.holder-2{
+  background: goldenrod;
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.holder-account-quest{
+  width: 30vw;
+  height: 40vh;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+.button-ques{
+  background: gray;
+  padding-left: 2vw;
+  padding-right: 2vw;
+  padding-top: 1vw;
+  padding-bottom: 1vw;
+  border-radius: 10px;
+  color: black;
+  font-weight: 700;
+}
+a {
+  text-decoration: none;
+
 }

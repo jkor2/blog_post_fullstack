@@ -56,7 +56,7 @@ exports.userLogin = asynchandler(async (req, res) => {
     console.log(liveAccount);
     bcrypt.compare(req.body.password, liveAccount.password, (err, result) => {
       if (result) {
-        //pass jswt here
+        //Sign JWT
         jwt.sign({ user: liveAccount }, process.env.JWTKEY, (err, token) => {
           if (err) {
             console.log(err);

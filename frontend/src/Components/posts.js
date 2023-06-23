@@ -22,7 +22,7 @@ export default function Posts() {
   console.log(data);
 
   return (
-    <div className="container">
+    <div>
       {display === false ? (
         <div className="load-hold">
           <Dna
@@ -35,9 +35,21 @@ export default function Posts() {
           />
         </div>
       ) : (
-        <div>
+        <div className="holder-2">
           {data.status !== 200 ? (
-            <div>Error</div>
+            <div className="holder-account-quest">
+              <div>Do you have an account?</div>
+              <div>
+                <a href="login" className="button-ques">
+                  Yes
+                </a>
+              </div>
+              <div>
+                <a href="signup" className="button-ques">
+                  No
+                </a>
+              </div>
+            </div>
           ) : (
             <div>
               <div className="header">TEST</div>
