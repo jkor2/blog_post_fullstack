@@ -2,7 +2,7 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
-  background: #6D6875;
+  background: #6d6875;
 }
 .container {
   height: 100vh;
@@ -19,13 +19,7 @@
   font-weight: 700;
   justify-content: center;
 }
-.body {
-  height: 60%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
+
 .ten {
   height: 10%;
   font-size: 1.75vw;
@@ -109,7 +103,7 @@ input {
   height: 100vh;
 }
 .holder-2{
-  background: goldenrod;
+
   height: 100vh;
   width: 100vw;
   display: flex;
@@ -150,4 +144,25 @@ h1{
 }
 .margin-top{
   margin-top: 20px;
+}
+.home-hold-login{
+
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+}
+.header-login{
+  display: flex;
+  height: 5vh;
+  align-items: center;
+  justify-content: center;
+  gap: 10%;
+}
+.body-login{
+  height: 95vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }

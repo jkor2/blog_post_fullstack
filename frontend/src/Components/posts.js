@@ -54,16 +54,15 @@ export default function Posts() {
               </div>
             </div>
           ) : (
-            <div>
-              <div className="header">TEST</div>
-              <div className="body">
-                <div className="ten">TEST</div>
-                <div className="ten">TEST</div>
-                <div className="login-singup">
-                  <a href="/" className="button">
-                    Go Home
-                  </a>
-                </div>
+            <div className="home-hold-login">
+              <div className="header-login">
+                <a>Create Post</a>
+                <a>Admin Access</a>
+              </div>
+              <div className="body-login">
+                <p>This is where all the posts will render</p>
+                <p>Will map through all the post and diplay:</p>
+                <p>Title, date, author, comment amount, likes, etc</p>
               </div>
             </div>
           )}
