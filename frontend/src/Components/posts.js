@@ -55,15 +55,27 @@ export default function Posts() {
             </div>
           ) : (
             <div className="home-hold-login">
-              <div className="header-login">
-                <a>Create Post</a>
-                <a>Admin Access</a>
-              </div>
-              <div className="body-login">
-                <p>This is where all the posts will render</p>
-                <p>Will map through all the post and diplay:</p>
-                <p>Title, date, author, comment amount, likes, etc</p>
-              </div>
+              {data != [] && data.authData.user.canPost ? (
+                <div>
+                  <div className="header-login">
+                    <a>Create Post</a>
+                    <a>Admin Access</a>
+                  </div>
+                  <div className="body-login">
+                    <p>This is where all the posts will render</p>
+                    <p>Will map through all the post and diplay:</p>
+                    <p>Title, date, author, comment amount, likes, etc</p>
+                  </div>
+                </div>
+              ) : (
+                <div>
+                  <div className="body-login-two">
+                    <p>This is where all the posts will render</p>
+                    <p>Will map through all the post and diplay:</p>
+                    <p>Title, date, author, comment amount, likes, etc</p>
+                  </div>
+                </div>
+              )}
             </div>
           )}
         </div>
