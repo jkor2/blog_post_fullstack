@@ -41,6 +41,7 @@ export default function Login() {
 
   return (
     <div className="form-hold">
+      <h1>Login</h1>
       <form onSubmit={handleSubmit} className="form">
         <input
           type="email"
@@ -60,6 +61,10 @@ export default function Login() {
           Submit
         </button>
       </form>
+      <h3>Don't have an account?</h3>
+      <a href="signup" className="button-ques">
+        Sign Up
+      </a>
     </div>
   );
 }

@@ -15,8 +15,11 @@ export default function Posts() {
       },
     })
       .then((res) => res.json())
-      .then((data) => setData(data))
-      .then(setDisplay(true));
+      .then((data) => setData(data));
+
+    setTimeout(() => {
+      setDisplay(true);
+    }, "500");
   }, []);
 
   console.log(data);
@@ -57,7 +60,7 @@ export default function Posts() {
                 <div className="ten">TEST</div>
                 <div className="ten">TEST</div>
                 <div className="login-singup">
-                  <a href="home" className="button">
+                  <a href="/" className="button">
                     Go Home
                   </a>
                 </div>

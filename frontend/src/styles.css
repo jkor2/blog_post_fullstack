@@ -2,6 +2,7 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+  background: #6D6875;
 }
 .container {
   height: 100vh;
@@ -34,10 +35,11 @@
   margin-bottom: 2%;
 }
 .login-singup {
-  height: 15%;
+  height: 10vh;
+  width: 30vw;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
 }
 a {
@@ -49,19 +51,20 @@ a {
   justify-content: center;
   align-items: center;
   font-size: 1.75vw;
-  width: 10%;
-  height: 30%;
+  width: 10vw;
+  height: 15vh;
   border-radius: 10px;
   margin-top: 2%;
   padding: 1.5%;
 }
 input {
-  height: 25vh;
+  height: 5vh;
   width: 20vw;
   padding-left: 2%;
   border-radius: 10px;
   outline: none;
   border: none;
+  background-color: #FFCDB2;
 }
 .form {
   display: flex;
@@ -73,16 +76,26 @@ input {
   gap: 10px;
 }
 .form-hold {
-  background: grey;
+  height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
+}
+.form-hold-extend{
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
 }
 .form-button {
   width: 20vw;
-  height: 20vh;
+  height: 5vh;
   border-radius: 10px;
   border: none;
+  background-color: #FFCDB2;
 }
 
 .dna-wrapper{
@@ -93,6 +106,7 @@ input {
   display: flex;
   justify-content: center;
   align-items: center;
+  height: 100vh;
 }
 .holder-2{
   background: goldenrod;
@@ -111,16 +125,29 @@ input {
   justify-content: space-evenly;
 }
 .button-ques{
-  background: gray;
+  background: #FFCDB2;
   padding-left: 2vw;
   padding-right: 2vw;
-  padding-top: 1vw;
-  padding-bottom: 1vw;
+  padding-top: .5vw;
+  padding-bottom: .5vw;
   border-radius: 10px;
   color: black;
-  font-weight: 700;
+  margin-top: 25px;
 }
 a {
   text-decoration: none;
 
+}
+h3 {
+  color: #FFCDB2;
+
+}
+h1{
+  color: #FFCDB2;
+}
+.margin-20{
+  margin-bottom: 20px;
+}
+.margin-top{
+  margin-top: 20px;
 }

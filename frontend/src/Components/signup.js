@@ -30,7 +30,8 @@ export default function Signup() {
     console.log(formData);
   };
   return (
-    <div className="form-hold">
+    <div className="form-hold-extend">
+      <h1 className="margin-20">Sign Up</h1>
       <form onSubmit={handleSubmit} className="form">
         <input
           type="text"
@@ -64,6 +65,10 @@ export default function Signup() {
           Submit
         </button>
       </form>
+      <h3 className="margin-top">Already have an account?</h3>
+      <a href="login" className="button-ques">
+        login
+      </a>
     </div>
   );
 }
