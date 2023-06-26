@@ -5,7 +5,6 @@ export default function Home() {
     <div className="container">
       <div className="header">The J Word</div>
       <div className="body">
-        <div className="ten">Welcome to The J Word</div>
         <div className="ten">
           A personal blog project creaetd using Node.js, Express, and React!
         </div>
