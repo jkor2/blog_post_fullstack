@@ -40,9 +40,15 @@ export default function CreatePost() {
       ) : (
         <div>
           {data.authData.user.canPost !== true ? (
-            <div>You dont have acess</div>
+            <div>
+              <h1>No access</h1>
+              <div> Will redirect back to the home page</div>
+            </div>
           ) : (
-            <div>You are able to post!</div>
+            <div>
+              <h1>You can post!</h1>
+              <h5>Needs form and submit here</h5>
+            </div>
           )}
         </div>
       )}
