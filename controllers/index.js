@@ -43,7 +43,17 @@ exports.individualPost = asynchandler(async (req, res) => {
 });
 //Create post -- this will add a post to the database
 exports.createPost = asynchandler(async (req, res) => {
-  res.send("will create a post if user has privlidges");
+  jwt.verify(req.token, process.env.JWTKEY, (err, authData) => {
+    if (err) {
+      res.json({ status: 403 });
+    } else {
+      console.log(authData);
+      res.json({
+        status: 200,
+        authData: authData,
+      });
+    }
+  });
 });
 //User login - will pass token in this request
 exports.userLogin = asynchandler(async (req, res) => {
