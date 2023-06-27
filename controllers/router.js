@@ -13,7 +13,7 @@ router.get("/api/user/:id", controller.userInfo);
 //Returns individual post
 router.get("/api/posts/:id", controller.individualPost);
 //Create post POST Request
-router.post("/create/post", controller.createPost);
+router.post("/posts/admin/create", controller.createPost);
 //User login
 router.post("/user/login", controller.userLogin);
 //User sign up

@@ -58,7 +58,7 @@ export default function Posts() {
               {data != [] && data.authData.user.canPost ? (
                 <div>
                   <div className="header-login">
-                    <a>Create Post</a>
+                    <a href="/posts/admin/create">Create Post</a>
                     <a>Admin Access</a>
                   </div>
                   <div className="body-login">
