@@ -3,7 +3,7 @@ import React from "react";
 export default function Home() {
   return (
     <div className="container">
-      <div className="header">The J Word</div>
+      <div className="header"></div>
       <div className="body">
         <div className="ten">
           A personal blog project creaetd using Node.js, Express, and React!
