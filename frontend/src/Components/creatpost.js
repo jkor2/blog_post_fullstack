@@ -21,6 +21,10 @@ export default function CreatePost() {
     }, "500");
   }, []);
 
+  function handleSubmit() {
+    console.log("Submitted");
+  }
+
   return (
     <div className="container">
       {data.status !== 200 ? (
@@ -45,9 +49,32 @@ export default function CreatePost() {
               <div> Will redirect back to the home page</div>
             </div>
           ) : (
-            <div>
-              <h1>You can post!</h1>
-              <h5>Needs form and submit here</h5>
+            <div className="container-two">
+              <div className="vh">
+                <h1>Create a post!</h1>
+              </div>
+              <div className="vh-two">
+                <form onSubmit={handleSubmit} className="form-two">
+                  <input
+                    type="text"
+                    id="title"
+                    name="title"
+                    required
+                    placeholder="Title"
+                    className="title"
+                  ></input>
+                  <textarea
+                    id="content"
+                    name="content"
+                    rows="10"
+                    cols="50"
+                    required
+                  ></textarea>
+                  <button type="submit" className="form-button-two">
+                    Submit
+                  </button>
+                </form>
+              </div>
             </div>
           )}
         </div>

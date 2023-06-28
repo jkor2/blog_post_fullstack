@@ -184,3 +184,47 @@ h1{
   align-items: center;
   justify-content: center;
 }
+.container-two{
+  height: 100vh;
+  display: flex;
+
+  flex-direction: column;
+}
+.vh{
+  height: 15vh;
+  display: flex;
+  justify-content: center;
+  padding-top: 3%;
+}
+.vh-two{
+  height: 75vh;
+  display: flex;
+  justify-content: center;
+}
+textarea{
+  background: #FFCDB2;
+  padding: 3%;
+  border-radius: 10px;
+  font-weight: 700;
+  height: 60vh;
+  width: 50vw;
+}
+.form-two{
+  display: flex;
+  flex-direction: column;
+  height: 55vh;
+  width: 30vw;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+.form-button-two{
+  width: 9vw;
+  height: 10vh;
+  border-radius: 10px;
+  border: none;
+  background-color: #FFCDB2;
+}
+.title{
+  height: 8vh;
+}
