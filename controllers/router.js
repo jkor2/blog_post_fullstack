@@ -14,6 +14,7 @@ router.get("/api/user/:id", controller.userInfo);
 router.get("/api/posts/:id", controller.individualPost);
 //Create post POST Request
 router.get("/posts/admin/create", tokenVerify, controller.createPost);
+router.post("/posts/admin/create", tokenVerify, controller.postPost);
 //User login
 router.post("/user/login", controller.userLogin);
 //User sign up

@@ -27,6 +27,30 @@ exports.postsGet = (req, res) => {
     }
   });
 };
+exports.postPost = (req, res) => {
+  console.log(req.body);
+  jwt.verify(req.token, process.env.JWTKEY, (err, authData) => {
+    console.log(authData.user._id);
+    if (err) {
+      res.json({ status: 403 });
+    } else {
+      //if the user token is valid
+
+      try {
+        const newMess = new Message({
+          title: req.body.title,
+          message: req.body.message,
+          user: authData.user._id,
+        });
+
+        const saveMsg = newMess.save();
+        res.json({ status: 200, text: "user saved" });
+      } catch (err) {
+        console.log(err);
+      }
+    }
+  });
+};
 //Individual User data - this will be used to edit users profiles
 exports.userInfo = asynchandler(async (req, res) => {
   res.json({
@@ -47,7 +71,6 @@ exports.createPost = asynchandler(async (req, res) => {
     if (err) {
       res.json({ status: 403 });
     } else {
-      console.log(authData);
       res.json({
         status: 200,
         authData: authData,
@@ -63,7 +86,6 @@ exports.userLogin = asynchandler(async (req, res) => {
   }
   //make sure password matches
   else {
-    console.log(liveAccount);
     bcrypt.compare(req.body.password, liveAccount.password, (err, result) => {
       if (result) {
         //Sign JWT
@@ -87,7 +109,6 @@ exports.userLogin = asynchandler(async (req, res) => {
 });
 //Sign up handler -- new users getting added to the DB
 exports.userCreate = asynchandler(async (req, res) => {
-  console.log(req.body);
   const salt = await bcrypt.genSalt(10);
   const hashedPassword = await bcrypt.hash(req.body.password, salt);
   try {

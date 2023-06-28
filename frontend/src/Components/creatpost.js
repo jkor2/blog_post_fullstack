@@ -4,7 +4,6 @@ export default function CreatePost() {
   const [data, setData] = React.useState([]);
   const [display, setDisplay] = React.useState(false);
   const token = localStorage.getItem("token");
-  console.log(data);
   React.useEffect(() => {
     fetch("/posts/admin/create", {
       method: "GET",
@@ -21,8 +20,28 @@ export default function CreatePost() {
     }, "500");
   }, []);
 
+  const [formData, setFormData] = React.useState({
+    title: "",
+    message: "",
+    user: "",
+  });
+  const handleChange = (event) => {
+    const { name, value } = event.target;
+    setFormData((prevData) => ({
+      ...prevData,
+      [name]: value,
+    }));
+  };
+
   function handleSubmit() {
-    console.log("Submitted");
+    fetch("/posts/admin/create", {
+      method: "POST",
+      headers: {
+        Authorization: `Bearer ${token}`,
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(formData),
+    });
   }
 
   return (
@@ -62,14 +81,18 @@ export default function CreatePost() {
                     required
                     placeholder="Title"
                     className="title"
+                    value={formData.title}
+                    onChange={handleChange}
                   ></input>
                   <textarea
                     id="content"
-                    name="content"
+                    name="message"
                     rows="10"
                     cols="50"
                     required
-                  ></textarea>
+                    value={formData.message}
+                    onChange={handleChange}
+                  />
                   <button type="submit" className="form-button-two">
                     Submit
                   </button>
