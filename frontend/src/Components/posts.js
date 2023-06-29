@@ -6,6 +6,7 @@ export default function Posts() {
   const [display, setDisplay] = React.useState(false);
   const token = localStorage.getItem("token");
 
+  console.log(data);
   React.useEffect(() => {
     fetch("/api/allposts", {
       method: "GET",

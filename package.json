@@ -9,6 +9,7 @@
   "author": "Jake",
   "license": "ISC",
   "dependencies": {
+    "async": "^3.2.4",
     "bcrypt": "^5.1.0",
     "bcryptjs": "^2.4.3",
     "dotenv": "^16.1.4",

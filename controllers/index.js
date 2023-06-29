@@ -7,6 +7,8 @@ const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
 const tokenVerify = require("../middlewear/jwtVerify");
 const user = require("../models/user");
+const async = require("async");
+
 require("dotenv").config();
 
 //test
@@ -15,7 +17,8 @@ exports.userGet = asynchandler(async (req, res) => {
 });
 
 //Get ALL posts - render all posts when a user is logged in
-exports.postsGet = (req, res) => {
+exports.postsGet = asynchandler(async (req, res) => {
+  const posts = await Message.find({}).exec();
   jwt.verify(req.token, process.env.JWTKEY, (err, authData) => {
     if (err) {
       res.json({ status: 403 });
@@ -23,10 +26,11 @@ exports.postsGet = (req, res) => {
       res.json({
         status: 200,
         authData: authData,
+        posts: posts,
       });
     }
   });
-};
+});
 exports.postPost = (req, res) => {
   console.log(req.body);
   jwt.verify(req.token, process.env.JWTKEY, (err, authData) => {
