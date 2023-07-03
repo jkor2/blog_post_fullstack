@@ -20,7 +20,7 @@ A blog site created with JSON Web Token, Node.JS, and React.
         </div>
       </div>
       <div className="footer-home">
-        <a href="https://github.com/JakeKorobellis" className="link-github">GitHub</a>
+        <a href="https://github.com/JakeKorobellis" className="link-github" target="_blank" >GitHub</a>
 
       </div>
     </div>
