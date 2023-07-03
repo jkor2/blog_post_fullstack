@@ -234,3 +234,12 @@ textarea{
   flex-direction: column;
   margin-top: 15%;
 }
+.footer-home{
+  width: 100vw;
+  background: #FFCDB2;
+  height: 6vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #6d6875;
+}
