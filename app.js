@@ -21,5 +21,4 @@ async function main() {
   await mongoose.connect(mongoDB);
   console.log("MongoDB is connected");
 }
-
 app.listen(5000, () => console.log("App is listening on port 3000"));
