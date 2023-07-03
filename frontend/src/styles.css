@@ -243,3 +243,10 @@ textarea{
   align-items: center;
   color: #6d6875;
 }
+.link-github{
+  text-decoration: none;
+  background: none;
+  color: #6d6875;
+  font-size: 1.25vw;
+  font-weight: 700;
+}
