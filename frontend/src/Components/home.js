@@ -19,6 +19,7 @@ A blog site created with JSON Web Token, Node.JS, and React.
           </a>
         </div>
       </div>
+      <div className="footer-home">Hello World</div>
     </div>
   );
 }
