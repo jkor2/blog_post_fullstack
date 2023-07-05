@@ -18,7 +18,7 @@ exports.userGet = asynchandler(async (req, res) => {
 
 //Get ALL posts - render all posts when a user is logged in
 exports.postsGet = asynchandler(async (req, res) => {
-  const posts = await Message.find({}).exec();
+  const posts = await Message.find({}).populate("user").exec();
   jwt.verify(req.token, process.env.JWTKEY, (err, authData) => {
     if (err) {
       res.json({ status: 403 });
