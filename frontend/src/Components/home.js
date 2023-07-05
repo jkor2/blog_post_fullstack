@@ -6,7 +6,9 @@ export default function Home() {
       <div className="header"></div>
       <div className="body">
         <div className="ten">
-          A personal blog project creaetd using Node.js, Express, and React!
+A blog site created with JSON Web Token, Node.JS, and React. 
+
+
         </div>
         <div className="login-singup">
           <a href="login" className="button">
@@ -16,6 +18,10 @@ export default function Home() {
             Sign Up
           </a>
         </div>
+      </div>
+      <div className="footer-home">
+        <a href="https://github.com/JakeKorobellis" className="link-github" target="_blank" >GitHub</a>
+
       </div>
     </div>
   );
