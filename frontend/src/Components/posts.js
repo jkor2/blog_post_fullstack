@@ -6,7 +6,6 @@ export default function Posts() {
   const [display, setDisplay] = React.useState(false);
   const token = localStorage.getItem("token");
 
-  console.log(data);
   React.useEffect(() => {
     fetch("/api/allposts", {
       method: "GET",
@@ -24,6 +23,20 @@ export default function Posts() {
   }, []);
 
   console.log(data);
+
+  const renderData = () => {
+    return data.posts.map((curr) => {
+      return (
+        <div>
+          <div>{curr.title}</div>
+          <div>
+            <div>{curr.message}</div>
+            <div>{curr.user.fname}</div>
+          </div>
+        </div>
+      );
+    });
+  };
 
   return (
     <div>
@@ -62,19 +75,11 @@ export default function Posts() {
                     <a href="/posts/admin/create">Create Post</a>
                     <a>Admin Access</a>
                   </div>
-                  <div className="body-login">
-                    <p>This is where all the posts will render</p>
-                    <p>Will map through all the post and diplay:</p>
-                    <p>Title, date, author, comment amount, likes, etc</p>
-                  </div>
+                  <div className="body-login-two">{renderData()}</div>
                 </div>
               ) : (
                 <div>
-                  <div className="body-login-two">
-                    <p>This is where all the posts will render</p>
-                    <p>Will map through all the post and diplay:</p>
-                    <p>Title, date, author, comment amount, likes, etc</p>
-                  </div>
+                  <div className="body-login-two">{renderData()}</div>
                 </div>
               )}
             </div>
