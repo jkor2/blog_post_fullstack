@@ -27,10 +27,12 @@ export default function Posts() {
   const renderData = () => {
     return data.posts.map((curr) => {
       return (
-        <div>
-          <div>{curr.title}</div>
+        <div className="posts-holder-individual">
+          <div className="title-post">{curr.title}</div>
           <div>
             <div>{curr.message}</div>
+          </div>
+          <div>
             <div>{curr.user.fname}</div>
           </div>
         </div>
