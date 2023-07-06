@@ -25,9 +25,9 @@ export default function Posts() {
   const renderData = () => {
     const preview = (message) => {
       const short_message = message;
-      const splitMessage = short_message.split(" ").slice(0, 10);
+      const splitMessage = short_message.split(" ").slice(0, 10).join(" ");
 
-      console.log(splitMessage);
+      return splitMessage;
     };
 
     return data.posts.map((curr) => {
@@ -35,7 +35,7 @@ export default function Posts() {
         <div className="posts-holder-individual">
           <div className="title-post">{curr.title}</div>
           <div>
-            <div>{preview(curr.message)}</div>
+            <div>{preview(curr.message)}...</div>
           </div>
           <div>
             <div>{curr.user.fname}</div>
