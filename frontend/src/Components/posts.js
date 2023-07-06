@@ -25,7 +25,9 @@ export default function Posts() {
   const renderData = () => {
     const preview = (message) => {
       const short_message = message;
-      console.log(short_message);
+      const splitMessage = short_message.split(" ").slice(0, 10);
+
+      console.log(splitMessage);
     };
 
     return data.posts.map((curr) => {
