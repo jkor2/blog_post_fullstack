@@ -22,15 +22,18 @@ export default function Posts() {
     }, "500");
   }, []);
 
-  console.log(data);
-
   const renderData = () => {
+    const preview = (message) => {
+      const short_message = message;
+      console.log(short_message);
+    };
+
     return data.posts.map((curr) => {
       return (
         <div className="posts-holder-individual">
           <div className="title-post">{curr.title}</div>
           <div>
-            <div>{curr.message}</div>
+            <div>{preview(curr.message)}</div>
           </div>
           <div>
             <div>{curr.user.fname}</div>
