@@ -178,12 +178,13 @@ h1{
   justify-content: center;
 }
 .body-login-two{
-  height: 100vw;
+  height: 100%;
   display: flex;
   background: green;
   flex-wrap: wrap;
   gap: 2vw;
   padding: 2vw;
+  overflow-y: auto;
 }
 .container-two{
   height: 100vh;
