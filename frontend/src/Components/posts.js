@@ -24,6 +24,11 @@ export default function Posts() {
     }, "500");
   }, []);
 
+  const handleButton = (item) => {
+    console.log(item);
+    console.log("Clicked");
+  };
+
   const renderData = () => {
     const preview = (message) => {
       const short_message = message;
@@ -42,7 +47,7 @@ export default function Posts() {
           <div>
             <div className="seperate-links">
               <div>{curr.user.fname}</div>
-              <div className="mini-test-link">View More</div>
+              <button onClick={handleButton}>View More</button>
             </div>
           </div>
         </div>
