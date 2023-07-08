@@ -280,3 +280,11 @@ textarea{
   font-size: 1.35vw;
   font-weight: 700;
 }
+.remove{
+  background: none;
+  color: black;
+}
+.remove:hover{
+  color: rgb(67, 67, 67);
+  font-family: 700;
+}

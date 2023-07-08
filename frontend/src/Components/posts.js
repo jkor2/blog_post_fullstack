@@ -40,7 +40,12 @@ export default function Posts() {
           <div>
             <div className="seperate-links">
               <div>{curr.user.fname}</div>
-              <div className="mini-test-link">View More</div>
+              <div className="mini-test-link">
+                {" "}
+                <a href="posts/:id" className="remove">
+                  View More
+                </a>
+              </div>
             </div>
           </div>
         </div>
