@@ -38,7 +38,10 @@ export default function Posts() {
             <div>{preview(curr.message)}...</div>
           </div>
           <div>
-            <div>{curr.user.fname}</div>
+            <div className="seperate-links">
+              <div>{curr.user.fname}</div>
+              <div className="mini-test-link">View More</div>
+            </div>
           </div>
         </div>
       );
