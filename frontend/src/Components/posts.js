@@ -6,6 +6,8 @@ export default function Posts() {
   const [display, setDisplay] = React.useState(false);
   const token = localStorage.getItem("token");
 
+  console.log(data);
+
   React.useEffect(() => {
     fetch("/api/allposts", {
       method: "GET",
@@ -42,7 +44,7 @@ export default function Posts() {
               <div>{curr.user.fname}</div>
               <div className="mini-test-link">
                 {" "}
-                <a href="posts/:id" className="remove">
+                <a href={"posts/" + curr._id} className="remove">
                   View More
                 </a>
               </div>
