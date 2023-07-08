@@ -130,7 +130,7 @@ exports.userCreate = asynchandler(async (req, res) => {
     console.log(err);
   }
 });
-
+//Test contribution
 //Submit a comment - post a comment, will just rerender the current page a user is on
 exports.submitComment = asynchandler(async (req, res) => {
   res.send("Comment has been submitted!");
