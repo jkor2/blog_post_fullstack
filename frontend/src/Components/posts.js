@@ -1,5 +1,7 @@
 import React from "react";
 import { Dna } from "react-loader-spinner";
+import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 export default function Posts() {
   const [data, setData] = React.useState([]);
@@ -7,6 +9,7 @@ export default function Posts() {
   const token = localStorage.getItem("token");
 
   console.log(data);
+  const history = useNavigate();
 
   React.useEffect(() => {
     fetch("/api/allposts", {
@@ -23,11 +26,6 @@ export default function Posts() {
       setDisplay(true);
     }, "500");
   }, []);
-
-  const handleButton = (item) => {
-    console.log(item);
-    console.log("Clicked");
-  };
 
   const renderData = () => {
     const preview = (message) => {
@@ -47,7 +45,7 @@ export default function Posts() {
           <div>
             <div className="seperate-links">
               <div>{curr.user.fname}</div>
-              <button onClick={handleButton}>View More</button>
+              <div>View More</div>
             </div>
           </div>
         </div>

@@ -64,6 +64,7 @@ exports.userInfo = asynchandler(async (req, res) => {
 //All comments for a post - this will be moved wo when an individual post is selected
 exports.individualPost = asynchandler(async (req, res) => {
   console.log("connected to the route ");
+
   //this needs to be rendered,
   res.json({
     post: "This will be the post",
