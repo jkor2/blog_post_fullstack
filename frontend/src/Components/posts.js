@@ -28,7 +28,6 @@ export default function Posts() {
     const preview = (message) => {
       const short_message = message;
       const splitMessage = short_message.split(" ").slice(0, 10).join(" ");
-
       return splitMessage;
     };
 
