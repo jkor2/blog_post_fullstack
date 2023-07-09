@@ -8,9 +8,6 @@ export default function Posts() {
   const [display, setDisplay] = React.useState(false);
   const token = localStorage.getItem("token");
 
-  console.log(data);
-  const history = useNavigate();
-
   React.useEffect(() => {
     fetch("/api/allposts", {
       method: "GET",
