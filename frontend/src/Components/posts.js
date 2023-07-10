@@ -50,7 +50,7 @@ export default function Posts() {
           <div>
             <div className="seperate-links">
               <div>{curr.user.fname}</div>
-              <div>{formatDate(curr.date)}</div>
+              <div className="small-text">{formatDate(curr.date)}</div>
             </div>
           </div>
         </div>

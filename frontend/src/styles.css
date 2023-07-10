@@ -253,14 +253,15 @@ textarea{
   font-weight: 700;
 }
 .posts-holder-individual{
-  width: 45vw;
+  width: 30vw;
   border: 2px solid black;
   border-radius: 10px;
-  height: 10vw;
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
   padding: 1vw;
+  gap: 10px;
+  font-size: 1vw;
 }
 .title-post{
   width: 100%;
@@ -287,4 +288,7 @@ textarea{
 .remove:hover{
   color: rgb(67, 67, 67);
   font-family: 700;
+}
+.small-text{
+  font-size: 1vw;
 }
