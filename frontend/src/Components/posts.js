@@ -7,6 +7,21 @@ export default function Posts() {
   const [data, setData] = React.useState([]);
   const [display, setDisplay] = React.useState(false);
   const token = localStorage.getItem("token");
+  console.log(data);
+
+  const formatDate = (dateString) => {
+    const date = new Date(dateString);
+
+    // Get the month, day, and year from the date object
+    const month = date.toLocaleString("en-US", { month: "long" });
+    const day = date.getDate();
+    const year = date.getFullYear();
+
+    // Format the date as "Month Day, Year"
+    const formattedDate = `${month} ${day}, ${year}`;
+
+    return formattedDate;
+  };
 
   React.useEffect(() => {
     fetch("/api/allposts", {
@@ -25,23 +40,17 @@ export default function Posts() {
   }, []);
 
   const renderData = () => {
-    const preview = (message) => {
-      const short_message = message;
-      const splitMessage = short_message.split(" ").slice(0, 10).join(" ");
-      return splitMessage;
-    };
-
     return data.posts.map((curr) => {
       return (
         <div className="posts-holder-individual">
           <div className="title-post">{curr.title}</div>
           <div>
-            <div>{preview(curr.message)}...</div>
+            <div>{curr.message}</div>
           </div>
           <div>
             <div className="seperate-links">
               <div>{curr.user.fname}</div>
-              <div>View More</div>
+              <div>{formatDate(curr.date)}</div>
             </div>
           </div>
         </div>
