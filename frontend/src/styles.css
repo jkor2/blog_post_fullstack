@@ -292,3 +292,22 @@ textarea{
 .small-text{
   font-size: 1vw;
 }
+.like-dislike{
+  display: flex;
+  gap: 3px;
+}
+.button-like-dislike{
+  font-size: .9vw;
+  text-decoration: none;
+  border: none;
+  background: none;
+  border: 1.5px solid black;
+  border-radius: 5px;
+  width: 5vw;
+  padding: .35vw;
+  font-weight: 700;
+}
+.button-like-dislike:hover{
+ background: #5a5860;
+ font-weight: 700;
+}

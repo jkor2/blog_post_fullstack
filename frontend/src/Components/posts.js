@@ -51,6 +51,10 @@ export default function Posts() {
             <div className="seperate-links">
               <div>{curr.user.fname}</div>
               <div className="small-text">{formatDate(curr.date)}</div>
+              <div className="like-dislike">
+                <button className="button-like-dislike">like</button>
+                <button className="button-like-dislike">Dislike</button>
+              </div>
             </div>
           </div>
         </div>
