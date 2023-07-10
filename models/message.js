@@ -8,6 +8,8 @@ const MessageSchema = new Schema({
   title: { type: String, required: true },
   user: { type: Schema.Types.ObjectId, ref: "User", required: true },
   date: { type: Date, default: Date.now },
+  likes: { type: Number, default: 0 },
+  dislike: { type: Number, default: 0 },
 });
 
 module.exports = mongoose.model("Message", MessageSchema);
