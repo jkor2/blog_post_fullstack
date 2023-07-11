@@ -9,11 +9,17 @@ const MessageSchema = new Schema({
   user: { type: Schema.Types.ObjectId, ref: "User", required: true },
   date: { type: Date, default: Date.now },
   likes: { type: Number, default: 0 },
-  dislike: { type: Number, default: 0 },
+  dislikes: { type: Number, default: 0 },
 });
 
 MessageSchema.methods.like = () => {
   this.likes += 1;
+  return this.save();
+};
+
+MessageSchema.methods.dislike = () => {
+  this.dislikes += 1;
+  return this.save();
 };
 
 module.exports = mongoose.model("Message", MessageSchema);
