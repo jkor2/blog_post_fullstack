@@ -7,7 +7,14 @@ export default function Posts() {
   const [data, setData] = React.useState([]);
   const [display, setDisplay] = React.useState(false);
   const token = localStorage.getItem("token");
-  console.log(data);
+
+  const handleDislike = () => {
+    console.log("Connected");
+  };
+
+  const handleLike = () => {
+    console.log("Connected");
+  };
 
   const formatDate = (dateString) => {
     const date = new Date(dateString);
@@ -52,8 +59,12 @@ export default function Posts() {
               <div>{curr.user.fname}</div>
               <div className="small-text">{formatDate(curr.date)}</div>
               <div className="like-dislike">
-                <button className="button-like-dislike">like</button>
-                <button className="button-like-dislike">Dislike</button>
+                <button className="button-like-dislike" onClick={handleLike}>
+                  like
+                </button>
+                <button className="button-like-dislike" onClick={handleDislike}>
+                  Dislike
+                </button>
               </div>
             </div>
           </div>
