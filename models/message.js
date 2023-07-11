@@ -12,4 +12,8 @@ const MessageSchema = new Schema({
   dislike: { type: Number, default: 0 },
 });
 
+MessageSchema.methods.like = () => {
+  this.likes += 1;
+};
+
 module.exports = mongoose.model("Message", MessageSchema);
