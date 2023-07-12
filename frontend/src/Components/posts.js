@@ -15,6 +15,15 @@ export default function Posts() {
   const handleLike = (item) => {
     console.log("Connected");
     console.log(item);
+    fetch("/api/message/like/" + item, {
+      method: "POST",
+      headers: {
+        Authorization: `Bearer ${token}`,
+        "Content-Type": "application/json",
+      },
+    })
+      .then((res) => res.json())
+      .then((data) => console.log(data));
   };
 
   const formatDate = (dateString) => {

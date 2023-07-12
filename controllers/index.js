@@ -147,8 +147,16 @@ exports.userPostEdit = asynchandler(async (req, res) => {
 });
 //Like message
 exports.likeMessage = asynchandler(async (req, res) => {
-  res.json({
-    message: "Liked",
+  jwt.verify(req.token, process.env.JWTKEY, (err, authData) => {
+    if (err) {
+      res.json({ status: 403 });
+    } else {
+      res.json({
+        status: 200,
+        authData: authData,
+        message: "Liked",
+      });
+    }
   });
 });
 

@@ -26,6 +26,6 @@ router.post("/admin/remove/comment", controller.adminRemoveComment);
 //Update a post **User should only be able to edit their own posts
 router.put("/api/posts/:id/edit", controller.userPostEdit);
 //posting a like to a message
-router.post("/api/message/like/:id", controller.likeMessage);
+router.post("/api/message/like/:id", tokenVerify, controller.likeMessage);
 
 module.exports = router;
