@@ -147,14 +147,17 @@ exports.userPostEdit = asynchandler(async (req, res) => {
 });
 //Like message
 exports.likeMessage = asynchandler(async (req, res) => {
+  const message = await Message.findOne({ _id: req.params.id });
   jwt.verify(req.token, process.env.JWTKEY, (err, authData) => {
     if (err) {
       res.json({ status: 403 });
     } else {
+      message.updateOne({ likes: message.likes + 1 }).exec();
+
       res.json({
         status: 200,
         authData: authData,
-        message: "Liked",
+        message: req.params.id,
       });
     }
   });

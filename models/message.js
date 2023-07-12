@@ -14,7 +14,7 @@ const MessageSchema = new Schema({
 
 MessageSchema.methods.like = () => {
   this.likes += 1;
-  return this.save();
+  return this.updateOne({ likes: this.likes }).exec();
 };
 
 MessageSchema.methods.dislike = () => {
