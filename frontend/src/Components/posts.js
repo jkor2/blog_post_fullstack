@@ -12,8 +12,9 @@ export default function Posts() {
     console.log("Connected");
   };
 
-  const handleLike = () => {
+  const handleLike = (item) => {
     console.log("Connected");
+    console.log(item);
   };
 
   const formatDate = (dateString) => {
@@ -45,7 +46,7 @@ export default function Posts() {
       setDisplay(true);
     }, "500");
   }, []);
-
+  console.log(data);
   const renderData = () => {
     return data.posts.map((curr) => {
       return (
@@ -59,7 +60,10 @@ export default function Posts() {
               <div>{curr.user.fname}</div>
               <div className="small-text">{formatDate(curr.date)}</div>
               <div className="like-dislike">
-                <button className="button-like-dislike" onClick={handleLike}>
+                <button
+                  className="button-like-dislike"
+                  onClick={() => handleLike(curr._id)}
+                >
                   like
                 </button>
                 <button className="button-like-dislike" onClick={handleDislike}>
