@@ -145,3 +145,9 @@ exports.adminRemoveComment = asynchandler(async (req, res) => {
 exports.userPostEdit = asynchandler(async (req, res) => {
   res.send("The post has been edited!");
 });
+//Like message
+exports.likeMessage = asynchandler(async (req, res) => {
+  res.json({
+    message: "sent",
+  });
+});
