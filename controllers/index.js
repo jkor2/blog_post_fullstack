@@ -148,6 +148,12 @@ exports.userPostEdit = asynchandler(async (req, res) => {
 //Like message
 exports.likeMessage = asynchandler(async (req, res) => {
   res.json({
-    message: "sent",
+    message: "Liked",
+  });
+});
+
+exports.dislikeMessage = asynchandler(async (req, res) => {
+  res.json({
+    message: "Disliked",
   });
 });
