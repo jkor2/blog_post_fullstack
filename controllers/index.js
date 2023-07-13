@@ -166,7 +166,16 @@ exports.likeMessage = asynchandler(async (req, res) => {
 exports.dislikeMessage = asynchandler(async (req, res) => {
   const message = await Message.findOne({ _id: req.params.id });
   console.log(message);
-  res.json({
-    message: "Disliked",
+  jwt.verify(req.token, process.env.JWTKEY, (err, authData) => {
+    if (err) {
+      res.json({ status: 400 });
+    } else {
+      message.updateOne({ dislikes: message.dislikes + 1 }).exec();
+      res.json({
+        status: 200,
+        authData: authData,
+        message: req.params.id,
+      });
+    }
   });
 });
