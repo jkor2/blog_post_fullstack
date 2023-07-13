@@ -27,5 +27,7 @@ router.post("/admin/remove/comment", controller.adminRemoveComment);
 router.put("/api/posts/:id/edit", controller.userPostEdit);
 //posting a like to a message
 router.post("/api/message/like/:id", tokenVerify, controller.likeMessage);
+//posting route for disliking a message
+router.post("/api/message/dislike/:id", tokenVerify, controller.dislikeMessage);
 
 module.exports = router;
