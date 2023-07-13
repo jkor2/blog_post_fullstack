@@ -164,6 +164,8 @@ exports.likeMessage = asynchandler(async (req, res) => {
 });
 
 exports.dislikeMessage = asynchandler(async (req, res) => {
+  const message = await Message.findOne({ _id: req.params.id });
+
   res.json({
     message: "Disliked",
   });
