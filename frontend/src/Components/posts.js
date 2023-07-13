@@ -8,8 +8,16 @@ export default function Posts() {
   const [display, setDisplay] = React.useState(false);
   const token = localStorage.getItem("token");
 
-  const handleDislike = () => {
-    console.log("Connected");
+  const handleDislike = (item) => {
+    fetch("/api/message/dislike/" + item, {
+      method: "POST",
+      headers: {
+        Authorization: `Bearer ${token}`,
+        "Content-Type": "application/json",
+      },
+    })
+      .then((res) => res.json())
+      .then((data) => console.log(data));
   };
 
   const handleLike = (item) => {
@@ -75,7 +83,10 @@ export default function Posts() {
                 >
                   like
                 </button>
-                <button className="button-like-dislike" onClick={handleDislike}>
+                <button
+                  className="button-like-dislike"
+                  onClick={() => handleDislike(curr._id)}
+                >
                   Dislike
                 </button>
               </div>
