@@ -132,7 +132,7 @@ export default function Posts() {
                 <div>
                   <div className="header-login">
                     <a href="/posts/admin/create">Create Post</a>
-                    <a>Admin Access</a>
+                    <a href="/posts/admin/access">Admin Access</a>
                   </div>
                   <div className="body-login-two">{renderData()}</div>
                 </div>
