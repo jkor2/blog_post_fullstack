@@ -6,6 +6,7 @@ import Signup from "./Components/signup";
 import Posts from "./Components/posts";
 import CreatePost from "./Components/creatpost";
 import "./styles.css";
+import AdminAccess from "./Components/adminAccess";
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
           <Route exact path="/signup" element={<Signup />} />
           <Route exact path="/posts" element={<Posts />} />
           <Route exact path="/posts/admin/create" element={<CreatePost />} />
+          <Route exact path="/posts/admin/access" element={<AdminAccess />} />
         </Routes>
       </Router>
     </div>
