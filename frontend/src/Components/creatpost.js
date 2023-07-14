@@ -33,7 +33,9 @@ export default function CreatePost() {
     }));
   };
 
-  function handleSubmit() {
+  function handleSubmit(event) {
+    event.preventDefault();
+
     fetch("/posts/admin/create", {
       method: "POST",
       headers: {
@@ -41,6 +43,11 @@ export default function CreatePost() {
         "Content-Type": "application/json",
       },
       body: JSON.stringify(formData),
+    });
+    setFormData({
+      title: "",
+      message: "",
+      user: "",
     });
   }
 
@@ -73,7 +80,11 @@ export default function CreatePost() {
                 <h1>Create a post!</h1>
               </div>
               <div className="vh-two">
-                <form onSubmit={handleSubmit} className="form-two">
+                <form
+                  method="POST"
+                  onSubmit={handleSubmit}
+                  className="form-two"
+                >
                   <input
                     type="text"
                     id="title"

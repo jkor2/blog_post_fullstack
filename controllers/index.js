@@ -36,6 +36,7 @@ exports.postPost = (req, res) => {
   jwt.verify(req.token, process.env.JWTKEY, (err, authData) => {
     console.log(authData.user._id);
     if (err) {
+      console.log("error: ", err);
       res.json({ status: 403 });
     } else {
       //if the user token is valid
@@ -45,9 +46,12 @@ exports.postPost = (req, res) => {
           title: req.body.title,
           message: req.body.message,
           user: authData.user._id,
+          likes: 0,
+          dislikes: 0,
         });
 
         const saveMsg = newMess.save();
+        console.log("Sucess");
         res.json({ status: 200, text: "user saved" });
       } catch (err) {
         console.log(err);
