@@ -15,7 +15,7 @@ require("dotenv").config();
 exports.userGet = asynchandler(async (req, res) => {
   res.send("Connected!");
 });
-
+//Bug found - not all posts rendering
 //Get ALL posts - render all posts when a user is logged in
 exports.postsGet = asynchandler(async (req, res) => {
   const posts = await Message.find({}).populate("user").exec();
