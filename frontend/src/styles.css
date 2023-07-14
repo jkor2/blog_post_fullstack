@@ -193,6 +193,17 @@ h1{
   background: rgb(118, 118, 118);
 
 }
+.body-login-two-not-admin{
+  height: 100vh;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2vw;
+  padding: 2vw;
+  overflow-y: auto;
+  overflow-x: hidden;
+  background: rgb(118, 118, 118);
+
+}
 .container-two{
   height: 100vh;
   display: flex;

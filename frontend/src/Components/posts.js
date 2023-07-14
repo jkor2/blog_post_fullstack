@@ -138,7 +138,7 @@ export default function Posts() {
                 </div>
               ) : (
                 <div>
-                  <div className="body-login-two">{renderData()}</div>
+                  <div className="body-login-two-not-admin">{renderData()}</div>
                 </div>
               )}
             </div>
