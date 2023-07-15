@@ -331,3 +331,8 @@ textarea{
  background: #5a5860;
  font-weight: 700;
 }
+.remaing-space{
+  background: green;
+  height: 100%;
+  width: 100vw;
+}

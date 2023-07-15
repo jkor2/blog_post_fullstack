@@ -46,8 +46,9 @@ export default function AdminAccess() {
           ) : (
             <div className="container-two">
               <div className="vh">
-                <h1>User Has Admin Access</h1>
+                <h1>Admin Access</h1>
               </div>
+              <div className="remaing-space"></div>
             </div>
           )}
         </div>
