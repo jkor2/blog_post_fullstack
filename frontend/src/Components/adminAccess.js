@@ -5,7 +5,7 @@ export default function AdminAccess() {
   const [display, setDisplay] = React.useState(false);
   const token = localStorage.getItem("token");
   React.useEffect(() => {
-    fetch("/posts/admin/create", {
+    fetch("/api/allposts", {
       method: "GET",
       headers: {
         Authorization: `Bearer ${token}`,
@@ -19,6 +19,8 @@ export default function AdminAccess() {
       setDisplay(true);
     }, "500");
   }, []);
+
+  console.log(data);
 
   return (
     <div className="container">
