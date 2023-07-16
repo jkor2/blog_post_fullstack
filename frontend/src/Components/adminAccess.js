@@ -22,6 +22,10 @@ export default function AdminAccess() {
 
   console.log(data);
 
+  const handleSelect = (id) => {
+    console.log(id);
+  };
+
   return (
     <div className="container">
       {data.status !== 200 ? (
@@ -50,7 +54,20 @@ export default function AdminAccess() {
               <div className="vh">
                 <h1>Admin Access</h1>
               </div>
-              <div className="remaing-space"></div>
+              <div className="remaing-space">
+                <div>Testing elements</div>
+                <button
+                  value="Value"
+                  onClick={() =>
+                    handleSelect(
+                      document.getElementsByClassName("test-button")[0].value
+                    )
+                  }
+                  className="test-button"
+                >
+                  Testing
+                </button>
+              </div>
             </div>
           )}
         </div>
