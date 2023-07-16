@@ -25,6 +25,10 @@ export default function AdminAccess() {
 
   const handleSelect = (id) => {
     console.log(id);
+    //take the value of the posts, once x is clicked
+    //redirect to another page asking for confirmation
+    //if yes, remove from db and return to this page
+    //if not, just return to this page
   };
 
   return (
