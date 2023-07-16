@@ -1,5 +1,5 @@
 import React from "react";
-
+//Bug: When switching from page to page, "Do you have an account" pops up for milliseconds
 export default function AdminAccess() {
   const [data, setData] = React.useState([]);
   const [display, setDisplay] = React.useState(false);
