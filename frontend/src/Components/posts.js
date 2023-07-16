@@ -18,6 +18,7 @@ export default function Posts() {
     })
       .then((res) => res.json())
       .then((data) => console.log(data));
+    window.location.reload(true);
   };
 
   const handleLike = (item) => {
@@ -68,7 +69,20 @@ export default function Posts() {
     return data.posts.map((curr) => {
       return (
         <div className="posts-holder-individual">
-          <div className="title-post">{curr.title}</div>
+          <div className="title-post">
+            <div>{curr.title}</div>
+            <div className="small-gap">
+              <span>
+                Likes: {curr.likes == 0 || curr.likes == null ? 0 : curr.likes}
+              </span>
+              <span>
+                Dislikes:{" "}
+                {curr.dislikes == 0 || curr.dislikes == null
+                  ? 0
+                  : curr.dislikes}
+              </span>
+            </div>
+          </div>
           <div>
             <div>{curr.message}</div>
           </div>
