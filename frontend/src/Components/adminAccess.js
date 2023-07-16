@@ -21,6 +21,7 @@ export default function AdminAccess() {
   }, []);
 
   console.log(data);
+  //need to find a cleaner way to get value
 
   const handleSelect = (id) => {
     console.log(id);
