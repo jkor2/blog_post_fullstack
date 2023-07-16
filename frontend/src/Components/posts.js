@@ -33,6 +33,7 @@ export default function Posts() {
     })
       .then((res) => res.json())
       .then((data) => console.log(data));
+    window.location.reload(true);
   };
 
   const formatDate = (dateString) => {
